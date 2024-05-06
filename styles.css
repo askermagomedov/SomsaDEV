@@ -1,0 +1,634 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, whitesmoke 50%, rgb(186, 186, 185) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 5s;
+}
+
+.bg3 {
+    animation-duration: 6s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/* body {
+    background: whitesmoke;
+} */
+
+
+.allheader_menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: whitesmoke;
+    z-index: 5;
+}
+
+.logo {
+    justify-self: start;
+    position: absolute;
+    left: 30px;
+    margin: 14px 0;
+}
+
+.top_menu {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.top_menu li {
+    margin: 14px 42px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.top_menu a {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.top_naming {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    transform: scaleX(0.9);
+    font-weight: 600;
+    color: chocolate;
+}
+
+/* .top_naming_logo{
+    top: -12px;
+    height: 40px;
+    width: 140px;
+    position: relative;
+} */
+
+.first_section {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 14px;
+    margin-top: 78px;
+}
+
+.main_header {
+    font-size: 48px;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.naming {
+    color: black;
+    font-size: 74px;
+}
+
+.main_description {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.btn {
+    width: 180px;
+    height: 40px;
+    cursor: pointer;
+    background: #3ed1d9;
+    border: 1px solid #69f1f8;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}
+
+.btn:hover {
+    transition: 0.5s ease-in-out;
+    background: #52eef4;
+}
+
+.btn span {
+    color: whitesmoke;
+    font-size: 16px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 100;
+}
+
+.mansory {
+    margin: 0 24px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+
+}
+
+
+.item {
+    width: 23%;
+    flex-grow: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mansory_image_description {
+    background: linear-gradient(to bottom, rgba(54, 54, 54, 0.85), transparent);
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: #f5f5f5;
+    font-size: 24px;
+    padding: 15px 20px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* pointer-events: none; */
+    z-index: 2;
+
+}
+
+.mansory_image_description_paragraph {
+    font-size: 16px;
+    /* line-height: 11px; */
+    transition: opacity 0.5s linear;
+    opacity: 0;
+}
+
+.mansory__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: filter 0.5s linear;
+    filter: blur(0) brightness(75%);
+
+}
+
+.mansory_image_description_button {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: whitesmoke;
+    font-size: 16px;
+    text-align: left;
+    height: 28px;
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+
+}
+
+.mansory_image_description_button_price {
+    margin-right: 8px;
+}
+
+.button_arrow {
+    width: 28px;
+    height: 8px;
+    object-fit: cover;
+}
+
+.item:hover .mansory__image {
+    /* opacity: .95; */
+    filter: blur(4px) brightness(75%);
+}
+
+/* .half_brightnes{
+    filter: brightness(50%);
+} */
+
+.item:hover .mansory_image_description_paragraph {
+    opacity: 1;
+}
+
+.item:hover .mansory_image_description_button {
+    opacity: 1;
+}
+
+.sub_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.mansory_item {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    background-color: rgb(233, 223, 223);
+    border-radius: 15px;
+    flex-grow: 1;
+    padding: 12px 18px;
+    transition: 0.5s ease-in-out;
+    border: 1px solid rgb(226, 218, 218);
+    position: relative;
+}
+
+.mansory_item_price {
+    padding: 8px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: #696969;
+    ;
+    font-size: 16px;
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.mansory_item:hover {
+    cursor: pointer;
+    background: rgb(245, 240, 240);
+    color: rgb(124, 122, 122);
+}
+
+.mansory_item:hover .mansory_item_price {
+    opacity: 1;
+}
+
+.under_mansory {
+    margin: 0 24px;
+    height: 400px;
+    display: flex;
+    background-color: rgb(233, 223, 223);
+    border-radius: 15px;
+    margin-bottom: 72px;
+    position: relative;
+}
+
+.bottom_item {
+    margin-right: 30%;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    font-size: 38px;
+    padding: 56px 56px;
+    width: 100%;
+}
+
+.btn2 {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    width: 380px;
+    height: 50px;
+    cursor: pointer;
+    background: #3ed1d9;
+    border: 1px solid #69f1f8;
+    outline: none;
+    transition: 0.5s ease-in-out;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    margin-bottom: 14px;
+}
+
+.btn2:hover {
+    transition: 0.5s ease-in-out;
+    background: #52eef4;
+}
+
+.btn2 span {
+    color: whitesmoke;
+    font-size: 18px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 100;
+}
+
+.second_section {
+    height: 50px;
+    margin: 0 24px;
+    text-align: left;
+    margin-bottom: 24px;
+    padding: 18px;
+}
+
+.technologies_description {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    font-size: 28px;
+}
+
+.second_mansory {
+    margin: 0 24px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.item2 {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(233, 223, 223);
+    width: 46%;
+    flex-grow: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 18px;
+    gap: 14px;
+}
+
+.sub_header {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.item2_description {
+    font-size: 22px;
+}
+
+.item3 {
+    position: relative;
+    height: 550px;
+    display: flex;
+    margin: 0 24px;
+    padding: 18px;
+    margin-bottom: 48px;
+}
+
+.item3_title {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    font-size: 34px;
+    margin-top: 42px;
+}
+
+.item3_list {
+    position: absolute;
+    right: 50px;
+    left: 500px;
+    top: 0;
+    bottom: 0;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    font-size: 28px;
+}
+
+.item3_list ol li {
+    margin: 42px 0;
+}
+
+.price_section {
+    display: flex;
+    /* height: 50px; */
+    margin: 0 24px;
+    /* text-align: left; */
+    margin-bottom: 14px;
+    padding: 18px;
+}
+
+.price_naming {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    font-size: 28px;
+}
+
+.price_section_mansory {
+    margin: 0 24px;
+    margin-right: 200px;
+    /* height: 100px; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+
+}
+
+.price_section_mansory_button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: rgb(233, 223, 223);
+    border: 1px solid rgb(226, 218, 218);
+    transition: 0.5s ease-in-out;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.price_section_mansory_button:hover {
+    transition: 0.5s ease-in-out;
+    background: #52eef4;
+    border: 1px solid #69f1f8;
+}
+
+.price_section_mansory_button span {
+    color: dimgray;
+    font-size: 16px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 100;
+}
+
+.under_price_section_mansory{
+    height: 600px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 8px;
+    margin: 0 24px 22px 24px;
+}
+
+.under_price_section_mansory_variants {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    background-color: #e9dfdf;
+    flex-grow: 1;
+    border-radius: 15px;
+    padding: 24px 18px;
+    max-width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mansory_price_image_description{
+    padding: 14px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    font-size: 28px;
+}
+
+.mansory_price_image_description_bottom{
+    align-items: end;
+    bottom: 20px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mansory_price_image_description p{
+    margin-bottom: 22px;
+}
+
+.mansory_price_image_description_list{
+    line-height: 1.5;
+    padding-left: 48px;
+    padding-right: 38px;
+    color: dimgray;
+    font-size: 16px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 100;
+}
+
+.mansory_price_image_description_button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #3ed1d9;
+    border: 1px solid #69f1f8;
+    transition: 0.5s ease-in-out;
+    border-radius: 8px;
+}
+
+.mansory_price_image_description_button:hover {
+    transition: 0.5s ease-in-out;
+    background: #52eef4;
+    border: 1px solid #69f1f8;
+}
+
+.mansory_price_image_description_button span {
+    color: whitesmoke;
+    font-size: 18px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 100;
+}
+
+.mansory_price_image_description_number{
+    margin-bottom: 12px;
+}
+
+.mansory_price_image_description_number p{
+    color: dimgray;
+    font-size: 28px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 100;
+}
+
+.basement {
+    background-color: #c2c2c2;
+    /* display: flex;
+    align-items: center; */
+    padding: 12px 18px 18px 38px;
+}
+
+.basement_logo{
+    display: flex;
+    align-items: center;
+}
+
+.basement_naming {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    font-size: 28px;
+}
+
+.basement_image{
+    width: 64px;
+}
+
+.basement_buttons{
+    line-height: 1.5;
+    margin-left: 10px;
+    margin-bottom: 14px;
+}
+
+.basement_buttons ul{
+    list-style-type: none;
+}
+
+.basement_buttons a {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.basement_logo_messages{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.basement_image_messages{
+    width: 64px;
+}
+
+.basement_rights{
+    margin-left: 10px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: lighter;
+    color: dimgray;
+    text-decoration: none;
+    font-size: 12px;
+}
